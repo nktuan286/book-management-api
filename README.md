@@ -13,6 +13,38 @@ The Book Management API is a Node.js application built using Express, MongoDB, a
   <li>NodeJS, Express, MongoDB, Mongoose, JWT, Nodemon, Swagger</li>
 </ul>
 
+# Project Structure
+```
+  book-management-api/
+  │
+  ├── controllers/
+  │   ├── authController.js
+  │   ├── bookController.js
+  |   ├── categoryController.js
+  ├── models/
+  │   ├── book.js
+  │   ├── category.js
+  │   ├── user.js
+  ├── routes/
+  │   ├── authRoutes.js
+  │   ├── bookRoutes.js
+  │   ├── categoryRoutes.js
+  ├── middleware/
+  │   ├── auth.js
+  ├── config/
+  │   ├── database.js
+  ├── .env
+  ├── index.js
+  ├── README.md
+  ├── package.json
+  └── docs/
+      └── books.yaml
+      └── categories.yaml
+      └── auth.yaml
+      └── swagger.js
+
+```
+
 # Installation
 Ensure you have the following installed:
 
