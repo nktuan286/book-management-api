@@ -43,3 +43,6 @@ Ensure you have the following installed:
    ```
 
 This will start the server on http://localhost:4000
+
+# API documentation
+API documentation on http://localhost:4000/api-docs
