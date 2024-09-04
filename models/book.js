@@ -7,7 +7,16 @@ const bookSchema = new mongoose.Schema({
     required: true,
     validate: { validator: v => /^[0-9]{3}-[0-9]{5}$/.test(v), message: 'ISBN must be in the format XXX-XXXXX' }
   },
-  price: { type: Number, required: true },
+  price: {
+    type: Number,
+    required: true,
+    validate: {
+      validator: function (v) {
+        return v >= 1;
+      },
+      message: () => `Price must be greater than 0!`
+    },
+  },
   author: { type: String, required: true },
   category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: true },
   review: { type: String },

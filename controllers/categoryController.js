@@ -2,17 +2,8 @@ const { validationResult } = require('express-validator');
 const categoryService = require('../services/categoryService');
 
 exports.addCategory = async (req, res) => {
-  const errors = validationResult(req);
-
-  if (!errors.isEmpty()) {
-    return res.status(400).json({
-      errors: errors.array()
-    });
-  }
-
-  const { name } = req.body || {};
-
   try {
+    const { name } = req.body || {};
     const category = await categoryService.add({ name });
 
     res.status(200).json(category);
@@ -24,14 +15,6 @@ exports.addCategory = async (req, res) => {
 }
 
 exports.getCategories = async (req, res) => {
-  const errors = validationResult(req);
-
-  if (!errors.isEmpty()) {
-    return res.status(400).json({
-      errors: errors.array()
-    });
-  }
-
   try {
     const categories = await categoryService.getAll();
 

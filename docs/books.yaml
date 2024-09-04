@@ -72,6 +72,7 @@
     parameters:
       - in: path
         name: id
+        required: true
         schema:
           type: string
         description: Book ID
@@ -87,6 +88,7 @@
     parameters:
       - in: path
         name: id
+        required: true
         schema:
           type: string
         description: Book ID
@@ -121,6 +123,7 @@
     parameters:
       - in: path
         name: id
+        required: true
         schema:
           type: string
         description: Book ID

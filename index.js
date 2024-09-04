@@ -9,12 +9,6 @@ connectDB();
 const app = express();
 app.use(bodyParser.json());
 
-app.use('/health-check', async (req, res) => {
-    res.json({
-        check: "helloworld"
-    })
-})
-
 app.use('/api/v1', router);
 require('./docs/swagger')(app);
 
