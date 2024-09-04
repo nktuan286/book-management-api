@@ -1,0 +1,46 @@
+/api/v1/auth/login:
+  post:
+    summary: Login
+    tags:
+      - Auth
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+              password:
+                type: string
+    responses:
+      '200':
+        description: Return an access token
+      '400':
+        description: Bad request
+      '401':
+        description: Unauthorization
+/api/v1/auth/register:
+  post:
+    summary: Register a new user
+    tags:
+      - Auth
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+              password:
+                type: string
+    responses:
+      '200':
+        description: Return an access token
+      '400':
+        description: Bad request
+      '401':
+        description: Unauthorization

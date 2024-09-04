@@ -1,0 +1,46 @@
+components:
+  schemas:
+    User:
+      type: Object
+      properties:
+        _id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+        password:
+          type: string
+    Category:
+      type: Object
+      properties:
+        _id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+    Book:
+      type: Object
+      properties:
+        _id:
+          type: string
+          readOnly: true
+        title:
+          type: string
+        isbn:
+          type: string
+        price:
+          type: number
+        author:
+          type: string
+        category:
+          type: string
+        review:
+          type: string
+        discount:
+          type: number
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        deletedAt:
+          type: string

@@ -1,0 +1,28 @@
+/api/v1/categories:
+  post:
+    summary: Create a new category
+    tags:
+      - Category
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+    responses:
+      '200':
+        description: Return true
+      '400':
+        description: Bad request
+  get:
+    summary: Get all categories
+    tags:
+      - Category
+    responses:
+      '200':
+        description: Return all categories
+      '400':
+        description: Bad request

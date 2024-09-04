@@ -1,0 +1,131 @@
+/api/v1/books:
+  # Create a new book
+  post:
+    summary: Create a new book
+    tags:
+      - Book
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+              isbn:
+                type: string
+              price:
+                type: number
+              author:
+                type: string
+              category:
+                type: string
+              review:
+                type: string
+              discount:
+                type: number
+    responses:
+      '200':
+        description: Return an object of created book
+      '400':
+        description: Bad request
+  # Get all books
+  get:
+    summary: Get all books
+    tags:
+      - Book
+    parameters:
+      - in: query
+        name: page
+        default: 1
+        schema:
+          type: integer
+        description: Page number
+      - in: query
+        name: limit
+        default: 100
+        schema:
+          type: integer
+        description: The numbers of items to return
+      - in: query
+        name: orderBy
+        default: 'asc'
+        schema:
+          type: string
+      - in: query
+        name: sortBy
+        default: 'createdAt'
+        schema:
+          type: string
+    responses:
+      '200':
+        description: Return all books
+      '400':
+        description: Bad request
+# Update a book by ID
+/api/v1/books/{id}:
+  get:
+    summary: Get a book by ID
+    tags:
+      - Book
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        description: Book ID
+    responses:
+      '200':
+        description: Return an object of book
+      '400':
+        description: Bad request
+  put:
+    summary: Update a book by ID
+    tags:
+      - Book
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        description: Book ID
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+              price:
+                type: number
+              author:
+                type: string
+              category:
+                type: string
+              review:
+                type: string
+              discount:
+                type: number
+    responses:
+      '200':
+        description: Return an object of updated book
+      '400':
+        description: Bad request
+  delete:
+    summary: Delete a book by ID
+    tags:
+      - Book
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        description: Book ID
+    responses:
+      '200':
+        description: Return an object of deleted book
+      '400':
+        description: Bad request
