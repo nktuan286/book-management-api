@@ -29,6 +29,10 @@ The Book Management API is a Node.js application built using Express, MongoDB, a
   │   ├── authRoutes.js
   │   ├── bookRoutes.js
   │   ├── categoryRoutes.js
+  ├── services/
+  │   ├── authServices.js
+  │   ├── bookServices.js
+  │   ├── categoryServices.js
   ├── middleware/
   │   ├── auth.js
   ├── config/
@@ -66,7 +70,7 @@ Ensure you have the following installed:
 3. Environment Variables:
    ```sh
     PORT=4000
-    MONGO_URI=your_mongodb_connection_string
+    DB_URI=your_mongodb_connection_string
     JWT_SECRET=your_jwt_secret
    ```
 5. Run the Application:
